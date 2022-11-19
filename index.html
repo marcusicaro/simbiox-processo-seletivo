@@ -5,11 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>API Filmes</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="content">
-      <h1>Movie API</h1>
-    </div>
+
+    <header>
+      <img src="logo.png" alt="MMDB Logo" srcset="" id="logo">
+      <form action="" id="form">
+        <input type="text" placeholder="Search" id="search" class="search">
+      </form>
+    </header>
+
+    <main id="main">
+      <div class="movie">
+        <img src="" alt="Movie Image" srcset="">
+        
+        <div class="movie-info"></div>
+      
+        <div class="movie-info">
+          <h3>Movie Title</h3>
+          <span class="green">9.3</span>
+        </div>
+
+        <div class="overview">
+          <p>Some text here</p>
+        </div>
+      </div>
+    </main>
 
     <script src="main.js"></script>
   </body>
