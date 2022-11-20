@@ -117,7 +117,7 @@ form.addEventListener('submit', (e) => {
 
 // return to the homepage
 logo.addEventListener('click', () => {
-    pageCall(currentPage);
+    getMovies(API_URL);
     pagination.classList.remove('hide');
 });
 
