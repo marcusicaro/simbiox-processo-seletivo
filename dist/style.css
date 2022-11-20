@@ -44,6 +44,56 @@ form {
     outline: none;
 }
 
-.movie img {
+main {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+}
 
+.movie-card {
+    width: 300px;
+    border: 1px solid rgb(36, 36, 36);
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0.25px 4px 5px rgb(36, 36, 36);
+    /* position: relative; */
+}
+
+.movie-card:hover {
+    transform: scale(1.01);
+    transition: transform 250ms;
+}
+
+.movie-card img {
+    width: 100%;
+}
+
+.movie-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 0.5px;
+}
+
+.movie-info span {
+    /* background-color: rgba(255, 255, 255, 0.336); */
+    color: black;
+    font-weight: bolder;
+    padding: 0.5rem;
+    border-radius: 50px;
+    box-shadow: 4px 4px 5px rgb(36, 36, 36);
+}
+
+.movie-info span.green {
+    color: green;
+}
+
+.movie-info span.orange {
+    color: rgb(219, 143, 0);
+}
+
+.movie-info span.red {
+    color: red;
 }
