@@ -10,7 +10,6 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "rules": {[
-        no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }]
-    ]}
+    "rules": {
+    }
 }
