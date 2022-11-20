@@ -8,6 +8,7 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const searchBar = document.getElementById('search');
 const logo = document.getElementById('logo');
+const returnPage = document.getElementById('return-page');
 
 const previous = document.getElementById('previous');
 const current = document.getElementById('current');
@@ -89,7 +90,13 @@ function displayMovies (data){
             <p>ID: ${id}</p>
             </div>
             `
-            return main.appendChild(movieCard);
+            returnPage.classList.remove('hide');
+            returnPage.addEventListener('click', (e) => {
+                e.preventDefault();
+                pageCall(currentPage);
+                hideReturnDisplayPagination();
+            });
+            main.appendChild(movieCard);
         });
     })
 };
@@ -107,18 +114,21 @@ function getScoreColor(score) {
 // search based on movies titles
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    
     const searchTerm = search.value;
 
-    if(searchTerm){
+    if(searchTerm) {
+        hideReturnDisplayPagination();
         return getMovies(searchURL + searchTerm);
-    } getMovies(API_URL);
+    } 
+    getMovies(API_URL);
+    hideReturnDisplayPagination();
 });
 
 // return to the homepage
 logo.addEventListener('click', () => {
     getMovies(API_URL);
     pagination.classList.remove('hide');
+    returnPage.classList.add('hide');
 });
 
 
@@ -126,11 +136,9 @@ function pageCall(page){
     let urlSplit = lastUrl.split('?');
     let queryParameters = urlSplit[1].split('&');
     let queryParametersSplit = queryParameters[queryParameters.length - 1].split('=');
-    // checks if it's a single page 
     if(queryParametersSplit[0] != 'page') {
         let url = lastUrl + '&page=' + page;
         getMovies(url);
-    // keeps going after 'page' becomes current page
     } else {
         queryParametersSplit[1] = page.toString();
         let joinSplitQueryParameters = queryParametersSplit.join('=');
@@ -141,16 +149,24 @@ function pageCall(page){
     }
 };
 
+// got to the next page 
 next.addEventListener('click', () => {
     if(nextPage <= totalPages){
         pageCall(nextPage);
     }
 });
 
+// return to the previous page 
 previous.addEventListener('click', () => {
     if(previousPage > 0){
         pageCall(previousPage);
     }
 });
+
+// hide return and display pagination
+function hideReturnDisplayPagination () {
+    returnPage.classList.add('hide');
+    pagination.classList.remove('hide');
+}
 
 getMovies(API_URL);
