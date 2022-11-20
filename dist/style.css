@@ -21,6 +21,7 @@ header {
 
 #logo {
     margin-left: 2em;
+    cursor: pointer;
 }
 
 #form {
