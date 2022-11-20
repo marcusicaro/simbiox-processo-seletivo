@@ -105,6 +105,10 @@ main {
     justify-content: center;
 }
 
+.hide {
+    display: none;
+}
+
 .page {
     padding: 20px;
     cursor: pointer;
