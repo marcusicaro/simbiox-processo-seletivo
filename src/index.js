@@ -12,6 +12,7 @@ const logo = document.getElementById('logo');
 const previous = document.getElementById('previous');
 const current = document.getElementById('current');
 const next = document.getElementById('next');
+const pagination = document.querySelector('.pagination');
 
 var currentPage = 0;
 var nextPage = 0;
@@ -69,6 +70,7 @@ function displayMovies (data){
         movieCard.addEventListener('click', (e) => {
             e.preventDefault();
             main.innerHTML = '';
+            pagination.classList.add('hide');
             movieCard.innerHTML = `
             <img src="${IMG_URL + poster_path}" alt="${title}" srcset="">
             
@@ -87,7 +89,7 @@ function displayMovies (data){
             <p>ID: ${id}</p>
             </div>
             `
-            main.appendChild(movieCard);
+            return main.appendChild(movieCard);
         });
     })
 };
@@ -115,7 +117,8 @@ form.addEventListener('submit', (e) => {
 
 // return to the homepage
 logo.addEventListener('click', () => {
-    getMovies(API_URL);
+    pageCall(currentPage);
+    pagination.classList.remove('hide');
 });
 
 
