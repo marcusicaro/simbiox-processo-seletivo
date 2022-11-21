@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+/* set project primary and secondary colors */
 :root {
     --primary-color: black;
     --secondary-color: rgb(245,197,24);
 }
 
+/* body and project settings  */
 body {
     background-color: var(--primary-color);
     display: flex;
@@ -15,6 +17,7 @@ body {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
+/* header section start  */
 header {
     padding: 1rem;
     display: flex;
@@ -27,12 +30,9 @@ header {
     cursor: pointer;
 }
 
-#form {
-    margin-right: 2em;
-}
-
 form {
     align-self: center;
+    margin-right: 2em;
 }
 
 .search {
@@ -47,7 +47,9 @@ form {
     border: 2px solid var(--secondary-color);
     outline: none;
 }
+/* header section ends  */
 
+/* start of main section of the page, where movie cards are displayed  */
 main {
     width: 95vw;
     display: flex;
@@ -56,24 +58,27 @@ main {
     gap: 15px;
 }
 
+/* movie card properties  */
 .movie-card {
     width: 300px;
     border: 1px solid rgb(36, 36, 36);
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0.25px 4px 5px rgb(36, 36, 36);
-    /* position: relative; */
 }
 
+/* increase movie cards size when on focus   */
 .movie-card:hover {
     transform: scale(1.01);
     transition: transform 250ms;
 }
 
+/* movie card image  */
 .movie-card img {
     width: 100%;
 }
 
+/* movie card title content  */
 .movie-info {
     display: flex;
     align-items: center;
@@ -81,6 +86,7 @@ main {
     letter-spacing: 0.5px;
 }
 
+/* movie score  */
 .movie-info span {
     color: black;
     font-weight: bolder;
@@ -89,18 +95,23 @@ main {
     box-shadow: 4px 4px 5px rgb(36, 36, 36);
 }
 
+/* movie score in case it's high  */
 .movie-info span.green {
     color: green;
 }
 
+/* movie score in case it's average  */
 .movie-info span.orange {
     color: rgb(219, 143, 0);
 }
 
+/* movie score in case it's low  */
 .movie-info span.red {
     color: red;
 }
+/* main section end  */
 
+/* start of pagination */
 .pagination {
     display: flex;
     margin: 10px 30px;
@@ -108,20 +119,24 @@ main {
     justify-content: center;
 }
 
+/* hides pagination when needed  */
 .hide {
     display: none;
 }
 
+/* used for both previous and next page  */
 .page {
     padding: 20px;
     cursor: pointer;
 }
 
+/* used when previous or next page are disabled  */
 .page.disabled {
     cursor: not-allowed;
     color: grey;
 }
 
+/* current page number display  */
 .current {
     padding: 10px 15px;
     border-radius: 50%;
@@ -129,8 +144,10 @@ main {
     box-shadow: 2px 4px 5px 4px rgb(36, 36, 36);
 }
 
+/* return to the movie list  */
 .return-page {
     margin: 15px;
     cursor: pointer;
     font-weight: bold;
 }
+/* end of pagination section  */
