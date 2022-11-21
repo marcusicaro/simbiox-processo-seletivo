@@ -147,7 +147,14 @@ main {
 /* return to the movie list  */
 .return-page {
     margin: 15px;
+    padding: 15px;
+    border-radius: 25%;
     cursor: pointer;
     font-weight: bold;
+    box-shadow: 2px 4px 5px 4px rgb(36, 36, 36);
+}
+
+.return-page p {
+    margin: 0px;
 }
 /* end of pagination section  */
