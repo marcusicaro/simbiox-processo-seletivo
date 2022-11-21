@@ -152,10 +152,10 @@ main {
 .return-page {
     margin: 15px;
     padding: 15px;
-    border-radius: 25%;
+    border-radius: 10%;
     cursor: pointer;
     font-weight: bold;
-    box-shadow: 2px 4px 5px 4px rgb(36, 36, 36);
+    background-color: var(--secondary-color);
 }
 
 .return-page p {
