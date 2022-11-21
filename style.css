@@ -19,6 +19,9 @@ body {
 
 /* header section start  */
 header {
+    position: sticky;
+    top: 0;
+    background-color: black;
     padding: 1rem;
     display: flex;
     width: 95vw;
